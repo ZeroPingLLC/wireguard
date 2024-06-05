@@ -95,6 +95,17 @@ function getHomeDirForClient() {
 	echo "$HOME_DIR"
 }
 
+function showProgress() {
+	PID=$!
+	spin='-\|/'
+	i=0
+	while kill -0 $PID 2>/dev/null; do
+		i=$(( (i+1) % 4 ))
+		printf "\r%s" "${spin:$i:1}"
+		sleep .1
+	done
+}
+
 function initialCheck() {
 	isRoot
 	checkVirt
@@ -166,9 +177,8 @@ function installQuestions() {
 	read -n1 -r -p "Drücken Sie eine beliebige Taste, um fortzufahren..."
 }
 
-function show
 
-Progress() {
+function showProgress() {
 	PID=$!
 	spin='-\|/'
 	i=0
@@ -592,7 +602,7 @@ function manageMenu() {
 	esac
 }
 
-# Überprüfen auf root, Virt, OS...
+# Überprüfen auf root, Virt, OS etc...
 initialCheck
 
 # Überprüfen, ob WireGuard bereits installiert ist und Parameter laden
@@ -602,13 +612,3 @@ if [[ -e /etc/wireguard/params ]]; then
 else
 	installWireGuard
 fi
-
-echo -e "${GREEN}
-   .--.
-  |o_o |
-  |:_/ |
- //   \ \\
-(|     | )
-/'\_   _/`\\
-\___)=(___/
-${NC}"
