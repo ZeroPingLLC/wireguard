@@ -1,53 +1,75 @@
-## README.md for ZeroPing.sh WireGuard Installer
+# WireGuard Installer
 
-**Dieser Installer hilft Ihnen dabei, einen WireGuard-Server auf Ihrem System einzurichten.**
+Dieses Repository enthält ein Bash-Skript zur Installation und Konfiguration eines sicheren WireGuard-Servers.
 
-**Features:**
+## Voraussetzungen
 
-* Einfache Installation und Konfiguration
-* Generierung von Client-Konfigurationsdateien für verschiedene Geräte
-* Option zum Widerrufen von Clients
-* Deinstallation von WireGuard
+- Root-Rechte sind erforderlich, um dieses Skript auszuführen.
+- Unterstützte Betriebssysteme: Debian, Ubuntu, Fedora, CentOS, AlmaLinux, Oracle Linux und Arch Linux.
 
-**Voraussetzungen:**
+## Installation
 
-* Ein Linux-System mit Root-Zugriff
-* Öffentliche IPv4- oder IPv6-Adresse
-* (Optional) Ein Domainname für Ihren Server
+### 1. Repository klonen
 
-**Installation:**
+Klonen Sie das Repository und navigieren Sie in das Verzeichnis:
 
-1. Laden Sie das Skript herunter:
-   ```
-   curl -sL https://raw.githubusercontent.com/ZeroPingLLC/WireGuard/master/ZeroPing.sh | bash
-   ```
-2. Beantworten Sie die Installationsfragen
-3. (Optional) Generieren Sie Client-Konfigurationsdateien
-4. (Optional) Deinstallieren Sie WireGuard
+```sh
+git clone https://github.com/ZeroPingLLC/wireguard.git
+cd wireguard
+```
 
-**Dokumentation:**
+### 2. Skript ausführbar machen
 
-* Vollständige Dokumentation finden Sie im GitHub-Repository: [https://github.com/mgrimace/PiHole-Wireguard-and-Homebridge-on-Raspberry-Pi-Zero-2](https://github.com/mgrimace/PiHole-Wireguard-and-Homebridge-on-Raspberry-Pi-Zero-2)
-* Fehler melden Sie bitte über die Issues-Seite: [https://github.com/mgrimace/PiHole-Wireguard-and-Homebridge-on-Raspberry-Pi-Zero-2](https://github.com/mgrimace/PiHole-Wireguard-and-Homebridge-on-Raspberry-Pi-Zero-2)
+Machen Sie das Skript ausführbar:
 
-**Lizenz:**
+```sh
+chmod +x wg-install.sh
+```
 
-Dieses Skript steht unter der MIT-Lizenz. Weitere Informationen finden Sie in der LICENSE-Datei im Repository.
+### 3. Skript ausführen
 
-**Haftungsausschluss:**
+Führen Sie das Skript mit root-Rechten aus:
 
-Die Verwendung dieses Skripts erfolgt auf eigene Gefahr. Der Autor übernimmt keine Verantwortung für Schäden, die durch die Verwendung dieses Skripts entstehen.
+```sh
+./wg-install.sh
+```
 
-## Weitere Informationen
+## Funktionen des Skripts
 
-* [WireGuard Website](https://www.wireguard.com/)
-* WireGuard Dokumentation [ungültige URL entfernt]
-* Erstellen einer WireGuard-Konfiguration [ungültige URL entfernt]
+### Überprüfungen
 
+- **isRoot**: Überprüft, ob das Skript mit Root-Rechten ausgeführt wird.
+- **checkVirt**: Überprüft, ob das System in einer unterstützten Virtualisierungsumgebung läuft.
+- **checkOS**: Überprüft, ob das Betriebssystem unterstützt wird.
 
-**Bitte beachten Sie:**
+### Installation
 
-* Dieses Skript befindet sich noch in der Entwicklung und kann Änderungen unterliegen.
-* Es wird empfohlen, Ihre Konfigurationsdateien vor der Verwendung des Skripts zu sichern.
-* Wenn Sie Probleme mit dem Skript haben, wenden Sie sich bitte an die Support-Community.
+- **installQuestions**: Stellt Fragen zur Konfiguration des WireGuard-Servers.
+- **installWireGuard**: Installiert WireGuard und konfiguriert die Servereinstellungen.
 
+### Verwaltung
+
+- **newClient**: Fügt einen neuen Client hinzu und generiert die Konfigurationsdatei.
+- **listClients**: Listet alle existierenden Clients auf.
+- **revokeClient**: Widerruft einen bestehenden Client und entfernt dessen Konfiguration.
+- **uninstallWg**: Deinstalliert WireGuard und entfernt alle Konfigurationsdateien.
+
+### Fortschrittsanzeige
+
+- **showProgress**: Zeigt eine einfache Fortschrittsanzeige während der Installation.
+
+```
+printf "${GREEN}
+   .--.
+  |o_o |
+  |:_/ |
+ //   \\ \\
+(|     | )
+/'\\_   _/`\\
+\\___)=(___/
+${NC}\n"
+```
+
+## Lizenz
+
+Dieses Projekt ist lizenziert unter der MIT-Lizenz - siehe die [LICENSE](LICENSE) Datei für Details.
