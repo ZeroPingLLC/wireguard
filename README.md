@@ -59,7 +59,7 @@ Führen Sie das Skript mit root-Rechten aus:
 ### Fortschrittsanzeige
 
 - **showProgress**: Zeigt eine einfache Fortschrittsanzeige während der Installation.
-- [Schau dir dieses YouTube-Video an](https://www.youtube.com/watch?v=tqwEAx1zJE8))
+- [Schau dir dieses YouTube-Video an](https://www.youtube.com/watch?v=tqwEAx1zJE8)
 
 ```
 printf "${GREEN}
