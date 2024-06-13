@@ -7,7 +7,7 @@ Dieses Repository enthält ein Bash-Skript zur Installation und Konfiguration ei
 - Root-Rechte werden benötigt, um dieses Skript auszuführen.
 - Unterstützte Betriebssysteme: Debian, Ubuntu, Fedora, CentOS, AlmaLinux, Oracle Linux und Arch Linux.
 - Erforderlich ist ein VPS-Server, z.B. KVM, oder ein dedizierter Server.
-- Hinweis: Mit dem Code "TIKTOK" erhältst du bei [ZeroPing.sh](https://zeroping.sh) im ersten Monat 50% Rabatt ❤️
+- Hinweis: Mit dem Code "TIKTOK" erhältst du bei [ZeroPing.sh](https://zeroping.sh) im ersten Monat 50% Rabatt. ❤️
 
 ## Installation
 
