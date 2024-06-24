@@ -1,65 +1,65 @@
 # WireGuard Installer
 
-Dieses Repository enthält ein Bash-Skript zur Installation und Konfiguration eines sicheren WireGuard-Servers.
+This repository contains a Bash script for installing and configuring a secure WireGuard server.
 
-## Voraussetzungen
+## Prerequisites
 
-- Root-Rechte werden benötigt, um dieses Skript auszuführen.
-- Unterstützte Betriebssysteme: Debian, Ubuntu, Fedora, CentOS, AlmaLinux, Oracle Linux und Arch Linux.
-- Erforderlich ist ein VPS-Server, z.B. KVM, oder ein dedizierter Server.
-- Hinweis: Mit dem Code "TIKTOK" erhältst du bei [ZeroPing.sh](https://zeroping.sh) im ersten Monat 50% Rabatt. ❤️
+- Root privileges are required to run this script.
+- Supported operating systems: Debian, Ubuntu, Fedora, CentOS, AlmaLinux, Oracle Linux, and Arch Linux.
+- A VPS server (e.g., KVM) or a dedicated server is required.
+- Note: Use the code "TIKTOK" to get 50% off your first month at [ZeroPing.sh](https://zeroping.sh). ❤️
 
 ## Installation
 
-### 1. Repository klonen
+### 1. Clone the repository
 
-Klonen Sie das Repository und navigieren Sie in das Verzeichnis:
+Clone the repository and navigate into the directory:
 
 ```sh
 git clone https://github.com/ZeroPingLLC/wireguard.git
 cd wireguard
 ```
 
-### 2. Skript ausführbar machen
+### 2. Make the script executable
 
-Machen Sie das Skript ausführbar:
+Make the script executable:
 
 ```sh
 chmod +x wg-install.sh
 ```
 
-### 3. Skript ausführen
+### 3. Run the script
 
-Führen Sie das Skript mit root-Rechten aus:
+Run the script with root privileges:
 
 ```sh
 ./wg-install.sh
 ```
 
-## Funktionen des Skripts
+## Script Features
 
-### Überprüfungen
+### Checks
 
-- **isRoot**: Überprüft, ob das Skript mit Root-Rechten ausgeführt wird.
-- **checkVirt**: Überprüft, ob das System in einer unterstützten Virtualisierungsumgebung läuft.
-- **checkOS**: Überprüft, ob das Betriebssystem unterstützt wird.
+- **isRoot**: Checks if the script is running with root privileges.
+- **checkVirt**: Checks if the system is running in a supported virtualization environment.
+- **checkOS**: Checks if the operating system is supported.
 
 ### Installation
 
-- **installQuestions**: Stellt Fragen zur Konfiguration des WireGuard-Servers.
-- **installWireGuard**: Installiert WireGuard und konfiguriert die Servereinstellungen.
+- **installQuestions**: Asks questions to configure the WireGuard server.
+- **installWireGuard**: Installs WireGuard and configures the server settings.
 
-### Verwaltung
+### Management
 
-- **newClient**: Fügt einen neuen Client hinzu und generiert die Konfigurationsdatei.
-- **listClients**: Listet alle existierenden Clients auf.
-- **revokeClient**: Widerruft einen bestehenden Client und entfernt dessen Konfiguration.
-- **uninstallWg**: Deinstalliert WireGuard und entfernt alle Konfigurationsdateien.
+- **newClient**: Adds a new client and generates the configuration file.
+- **listClients**: Lists all existing clients.
+- **revokeClient**: Revokes an existing client and removes its configuration.
+- **uninstallWg**: Uninstalls WireGuard and removes all configuration files.
 
-### Fortschrittsanzeige
+### Progress Display
 
-- **showProgress**: Zeigt eine einfache Fortschrittsanzeige während der Installation.
-- [Schau dir dieses YouTube-Video an](https://www.youtube.com/watch?v=tqwEAx1zJE8)
+- **showProgress**: Displays a simple progress indicator during the installation.
+- [Watch this YouTube video](https://www.youtube.com/watch?v=tqwEAx1zJE8)
 
 ```
 printf "${GREEN}
@@ -73,6 +73,6 @@ printf "${GREEN}
 ${NC}\n"
 ```
 
-## Lizenz
+## License
 
-Dieses Projekt ist lizenziert unter der MIT-Lizenz - siehe die [LICENSE](LICENSE) Datei für Details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
